@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+}
+ .container{
+     display: flex;
+     justify-content: center;
+     flex-wrap: wrap;
+}
+.card{
+    width: 180px; height: 180px;
+    perspective: 1500px;
+    position: relative;
+    margin: 25px 50px;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0,0,0,3);
+    transition: all 0.3s;
+}
+.icon, .snapshot{
+    position: absolute;
+    top: 0;left: 0;
+    width: 100%; height: 100%;
+}
+.icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform-origin: left;
+    transition: all 0.3s;
+    font-size: 60px;
+    color: #fff;
+}
+.card:first-child .icon{ background-color: #3b5998;}
+.card:nth-child(2) .icon{ background-color: #ea4c89;}
+.card:last-child .icon{ background-color: #00acee;}
+.snapshot{ background-size: cover;}
+
+.card:first-child .snapshot{
+    background-image: url("image456.jpeg") ;
+}
+
+.card:nth-child(2) .snapshot{
+    background-image: url("image123.jpeg");
+}
+.card:last-child .snapshot{
+    background-image: url("image123.jpeg");
+}
+.card:hover .icon{ transform: rotateY(-120deg);}
+.container:hover .card{ filter: blur(1px);}
+.container .card:hover{
+    filter: blur(0);
+    transform: translateY(-10px) rotate(-10deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

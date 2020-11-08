@@ -1,0 +1,56 @@
+body{
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+}
+.image-container{
+    width: 250px; height: 350px;
+    position: relative;
+    cursor: pointer;
+}
+.image, .image-container::before{
+    width: 100%; height: 100%;
+    background-image: url("clg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.image{ filter: grayscale(100%);}
+.image-container::before{
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    clip-path: circle(0 at 50% 0);
+    transition: all 0.3s;
+    z-index: 1;
+}
+.image-container::after{
+    content: "";
+    position: absolute;
+    top: -100px; left: 50%;
+    transform: translateX(-50%);
+    width: 20px; height: 20px;
+    background-image: linear-gradient(#0F76D6,#710493);
+    border-radius: 0% 100% 100% 100%;
+    opacity: 0;
+    transform: rotate(45deg);
+}
+.image-container:hover::after{
+    animation: fall 0.5s cubic-bezier(1,0,1,.81);
+}
+.image-container:hover::before{
+    clip-path: circle(500px at 50% 0);
+    transition-delay: 0.5s;
+}
+@keyframes fall{
+    from{
+    opacity: 1;
+}
+to{
+    opacity: 0;
+    top:100px;
+}
+}

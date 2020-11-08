@@ -1,0 +1,26 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+
+.container{
+    position: absolute;
+    top: 50%; left:50%;
+    transform: translate(-50%,-50%);
+    width: 300px;height: 300px;
+    border: 1px solid #111;
+    padding: 10px 20px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+p{
+    font-size: 13px;
+    line-height: 0.8;
+    background-image: url("source.gif");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-weight: bold;
+    filter: brightness(10%);
+   -webkit-background-clip: text;
+    color: transparent;
+
+}
